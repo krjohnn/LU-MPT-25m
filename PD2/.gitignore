@@ -1,6 +1,16 @@
+# Ignore Node modules (heavy)
 node_modules
-.DS_Store
+dist
+build
+
+# Ignore the Database file (generated)
 *.db
 *.db-journal
-build
-dist
+
+# Ignore the Data Files (XML/JSON)
+data/*.xml
+data/*.json
+data/*.zip
+
+# macOS junk (just in case)
+.DS_Store
