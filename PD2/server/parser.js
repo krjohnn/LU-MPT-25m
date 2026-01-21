@@ -14,3 +14,26 @@ const parseTime = (timeStr) => {
 };
 
 console.log("Step 1 Loaded: Time Math is ready.");
+
+function parseGameFile(filePath) {
+    console.log("Attempting to read:", filePath);
+    
+    // 1. Read the file
+    try {
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        console.log("File Read Successfully!");
+        console.log("First 50 characters:", raw.substring(0, 50));
+        
+        // 2. Try to parse JSON
+        const data = JSON.parse(raw);
+        console.log("JSON Parse Successfully!");
+        
+        // 3. Check what keys we found
+        console.log("Root Keys found:", Object.keys(data));
+        
+    } catch (err) {
+        console.error("Error:", err.message);
+    }
+}
+
+module.exports = { parseGameFile };
