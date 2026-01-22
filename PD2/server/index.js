@@ -10,7 +10,7 @@ app.use(cors());
 
 // --- 1. THE MAIN "SCAN" API ---
 app.get('/api/process', (req, res) => {
-    const dataDir = path.join(__dirname, '../data');
+    const dataDir = path.join(__dirname, '../data/JSON_TestData');
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
 
     const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
