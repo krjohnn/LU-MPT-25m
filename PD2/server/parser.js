@@ -39,7 +39,7 @@ function parseGameFile(filePath) {
         console.log(`Overtime Detected! Game ended at ${gameEndTime.toFixed(2)} mins`);
     }
 
-    // CALCULATE PLAYER STATS
+    // PLAYER STATS
     const teams = teamsRaw.map(tRaw => {
         const name = tRaw.Nosaukums;
         const goals = asArray(tRaw.Varti?.VG || tRaw.Varti); 

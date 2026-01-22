@@ -9,7 +9,7 @@ const { parseGameFile } = require('./parser');
 const app = express();
 app.use(cors());
 
-// --- 1. THE MAIN "SCAN" API ---
+// --- THE MAIN FILE PROCESSING API ---
 app.get('/api/process', (req, res) => {
     const dataDir = path.join(__dirname, '../data/JSON_TestData');
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
@@ -74,7 +74,7 @@ app.get('/api/process', (req, res) => {
     res.json({ message: `Processed ${count} new files.` });
 });
 
-// --- 2. DATA ENDPOINTS (EXISTING) ---
+// --- GENERAL DATA API ENDPOINTS ---
 app.get('/api/table', (req, res) => {
     const data = db.prepare('SELECT * FROM teams ORDER BY points DESC, goals_scored DESC').all();
     res.json(data);
@@ -85,9 +85,9 @@ app.get('/api/scorers', (req, res) => {
     res.json(data);
 });
 
-// --- 3. NEW EXTRA STATS ENDPOINTS (THIS IS THE "API PART") ---
+// --- STATISTICS API ENDPOINTS ---
 
-// Extra Stat 1: Most Cards (Red first, then Yellow)
+// Extra Statistic 1: Most Cards (Red first, then Yellow)
 app.get('/api/penalties', (req, res) => {
     const data = db.prepare(`
         SELECT name, team, red_cards, yellow_cards 
@@ -99,8 +99,8 @@ app.get('/api/penalties', (req, res) => {
     res.json(data);
 });
 
-// Extra Stat 2: Most Minutes (Iron Men)
-app.get('/api/ironmen', (req, res) => {
+// Extra Statistic 2: Most Minutes Played
+app.get('/api/playing-time', (req, res) => {
     const data = db.prepare(`
         SELECT name, team, minutes_played, games_played
         FROM players 

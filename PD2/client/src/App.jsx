@@ -5,27 +5,27 @@ function App() {
   const [teams, setTeams] = useState([]);
   const [scorers, setScorers] = useState([]);
   const [penalties, setPenalties] = useState([]);
-  const [ironmen, setIronmen] = useState([]); 
+  const [playingTime, setPlayingTime] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [tableSort, setTableSort] = useState({ column: 'points', order: 'desc' });
   const [scorersSort, setScorersSort] = useState({ column: 'goals', order: 'desc' });
   const [penaltiesSort, setPenaltiesSort] = useState({ column: 'red_cards', order: 'desc' });
-  const [ironmenSort, setIronmenSort] = useState({ column: 'minutes_played', order: 'desc' });
+  const [playingTimeSort, setPlayingTimeSort] = useState({ column: 'minutes_played', order: 'desc' });
 
   const loadData = async () => {
     try {
-        const [resTeams, resScorers, resPenalties, resIron] = await Promise.all([
+        const [resTeams, resScorers, resPenalties, resPlayingTime] = await Promise.all([
             fetch('http://localhost:5000/api/table'),
             fetch('http://localhost:5000/api/scorers'),
             fetch('http://localhost:5000/api/penalties'),
-            fetch('http://localhost:5000/api/ironmen')
+          fetch('http://localhost:5000/api/playing-time')
         ]);
 
         setTeams(await resTeams.json());
         setScorers(await resScorers.json());
         setPenalties(await resPenalties.json());
-        setIronmen(await resIron.json());
+        setPlayingTime(await resPlayingTime.json());
     } catch (err) {
         console.error("Error loading data", err);
     }
@@ -214,10 +214,10 @@ function App() {
           </div>
         </div>
 
-        {/* TABLE 4: Iron Men */}
+        {/* TABLE 4: Playing Time Leaders */}
         <div className="col-lg-6">
           <div className="card shadow-sm h-100">
-            <div className="card-header bg-white fw-bold">Dzelzs Vīri (Minūtes)</div>
+            <div className="card-header bg-white fw-bold">Spēles Laika Līderi</div>
             <div className="card-body p-0">
             <table className="table table-hover align-middle mb-0">
                 <SortableTableHeader 
@@ -227,11 +227,11 @@ function App() {
                     { key: 'games_played', label: 'Spēles', sortable: true },
                     { key: 'minutes_played', label: 'Minūtes', sortable: true }
                   ]}
-                  sortState={ironmenSort}
-                  onSort={(col, state) => handleSort(col, state, setIronmenSort)}
+                  sortState={playingTimeSort}
+                  onSort={(col, state) => handleSort(col, state, setPlayingTimeSort)}
                 />
                 <tbody>
-                    {sortData(ironmen, ironmenSort.column, ironmenSort.order).map(p => (
+                    {sortData(playingTime, playingTimeSort.column, playingTimeSort.order).map(p => (
                         <tr key={p.id}>
                             <td className="fw-semibold">{p.name}</td>
                             <td>{p.team}</td>
