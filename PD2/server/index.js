@@ -19,10 +19,15 @@ app.get('/api/process', (req, res) => {
 
     const insertTeam = db.prepare(`INSERT INTO teams (name) VALUES (?) ON CONFLICT(name) DO NOTHING`);
     const updateTeamStats = db.prepare(`
-        UPDATE teams SET points = points + ?, games_won_reg = games_won_reg + ?, 
-        games_won_ot = games_won_ot + ?, games_lost_reg = games_lost_reg + ?, 
-        games_lost_ot = games_lost_ot + ?, goals_scored = goals_scored + ?, 
-        goals_conceded = goals_conceded + ? WHERE name = ?
+        UPDATE teams SET 
+            points = points + @pts,
+            games_won_reg = games_won_reg + @wReg,
+            games_won_ot = games_won_ot + @wOt,
+            games_lost_reg = games_lost_reg + @lReg,
+            games_lost_ot = games_lost_ot + @lOt,
+            goals_scored = goals_scored + @gf,
+            goals_conceded = goals_conceded + @ga
+        WHERE name = @name
     `);
     const insertPlayer = db.prepare(`
         INSERT INTO players (id, name, team, nr, role, goals, assists, minutes_played, yellow_cards, red_cards, games_played)
@@ -56,7 +61,16 @@ app.get('/api/process', (req, res) => {
                 }
 
                 insertTeam.run(team.name);
-                updateTeamStats.run(pts, wReg, wOt, lReg, lOt, team.score, team.opponentScore, team.name);
+                updateTeamStats.run({
+                    pts,
+                    wReg,
+                    wOt,
+                    lReg,
+                    lOt,
+                    gf: team.score ?? 0,
+                    ga: team.opponentScore ?? 0,
+                    name: team.name
+                });
 
                 team.players.forEach(p => {
                     const uniqueId = `${team.name}-${p.nr}`;
@@ -71,7 +85,7 @@ app.get('/api/process', (req, res) => {
         }
     });
 
-    res.json({ message: `Processed ${count} new files.` });
+    res.json({ message: `Ielādēti ${count} jauni faili.` });
 });
 
 // --- GENERAL DATA API ENDPOINTS ---

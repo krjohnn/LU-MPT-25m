@@ -24,7 +24,7 @@ function parseGameFile(filePath) {
 
     // DETERMINE GAME DURATION (Check for Overtime)
     let gameEndTime = 60.0;
-    const teamsRaw = asArray(root.Komand);
+    const teamsRaw = asArray(root.Komanda);
     
     const allGoals = [];
     teamsRaw.forEach(t => {
