@@ -4,27 +4,27 @@ import './App.css'
 function App() {
   const [teams, setTeams] = useState([]);
   const [scorers, setScorers] = useState([]);
-  const [rude, setRude] = useState([]);      // NEW
+  const [penalties, setPenalties] = useState([]);      // NEW
   const [ironmen, setIronmen] = useState([]); // NEW
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [tableSort, setTableSort] = useState({ column: 'points', order: 'desc' });
   const [scorersSort, setScorersSort] = useState({ column: 'goals', order: 'desc' });
-  const [rudeSort, setRudeSort] = useState({ column: 'red_cards', order: 'desc' });
+  const [penaltiesSort, setPenaltiesSort] = useState({ column: 'red_cards', order: 'desc' });
   const [ironmenSort, setIronmenSort] = useState({ column: 'minutes_played', order: 'desc' });
 
   const loadData = async () => {
     try {
-        const [resTeams, resScorers, resRude, resIron] = await Promise.all([
+        const [resTeams, resScorers, resPenalties, resIron] = await Promise.all([
             fetch('http://localhost:5000/api/table'),
             fetch('http://localhost:5000/api/scorers'),
-            fetch('http://localhost:5000/api/rude'),    // NEW
+            fetch('http://localhost:5000/api/penalties'),    // NEW
             fetch('http://localhost:5000/api/ironmen')  // NEW
         ]);
 
         setTeams(await resTeams.json());
         setScorers(await resScorers.json());
-        setRude(await resRude.json());
+        setPenalties(await resPenalties.json());
         setIronmen(await resIron.json());
     } catch (err) {
         console.error("Error loading data", err);
@@ -183,9 +183,9 @@ function App() {
       {/* ROW 2: Extra Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
         
-        {/* TABLE 3: Rude Players */}
+        {/* TABLE 3: Penalties (Cards) */}
         <div className="card">
-            <h2>Rupjākie Spēlētāji</h2>
+            <h2>Sodi (Kartītes)</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <SortableTableHeader 
                   cols={[
@@ -194,11 +194,11 @@ function App() {
                     { key: 'red_cards', label: 'Sarkanās', sortable: true },
                     { key: 'yellow_cards', label: 'Dzeltenās', sortable: true }
                   ]}
-                  sortState={rudeSort}
-                  onSort={(col, state) => handleSort(col, state, setRudeSort)}
+                  sortState={penaltiesSort}
+                  onSort={(col, state) => handleSort(col, state, setPenaltiesSort)}
                 />
                 <tbody>
-                    {sortData(rude, rudeSort.column, rudeSort.order).map(p => (
+                    {sortData(penalties, penaltiesSort.column, penaltiesSort.order).map(p => (
                         <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '8px' }}>{p.name}</td>
                             <td style={{ padding: '8px' }}>{p.team}</td>

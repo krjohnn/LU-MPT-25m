@@ -88,7 +88,7 @@ app.get('/api/scorers', (req, res) => {
 // --- 3. NEW EXTRA STATS ENDPOINTS (THIS IS THE "API PART") ---
 
 // Extra Stat 1: Most Cards (Red first, then Yellow)
-app.get('/api/rude', (req, res) => {
+app.get('/api/penalties', (req, res) => {
     const data = db.prepare(`
         SELECT name, team, red_cards, yellow_cards 
         FROM players 
