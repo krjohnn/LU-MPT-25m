@@ -31,7 +31,7 @@ function App() {
   // Process Files Handler
   const handleScan = async () => {
     setLoading(true);
-    setMessage("Processing files...");
+    setMessage("Apstrādā failus...");
     try {
         const res = await fetch('http://localhost:5000/api/process');
         const data = await res.json();
