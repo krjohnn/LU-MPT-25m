@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const db = require('./database');
 const { parseGameFile } = require('./parser');
 
@@ -34,11 +35,15 @@ app.get('/api/process', (req, res) => {
     `);
 
     files.forEach(file => {
-        const exists = db.prepare('SELECT 1 FROM processed_files WHERE filename = ?').get(file);
+        const filePath = path.join(dataDir, file);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const contentHash = crypto.createHash('md5').update(fileContent).digest('hex');
+        
+        const exists = db.prepare('SELECT 1 FROM processed_files WHERE filename = ? AND content_hash = ?').get(file, contentHash);
         if (exists) return;
 
         try {
-            const game = parseGameFile(path.join(dataDir, file));
+            const game = parseGameFile(filePath);
             
             [game.teamA, game.teamB].forEach(team => {
                 let pts=0, wReg=0, wOt=0, lReg=0, lOt=0;
@@ -59,7 +64,7 @@ app.get('/api/process', (req, res) => {
                 });
             });
 
-            db.prepare('INSERT INTO processed_files (filename) VALUES (?)').run(file);
+            db.prepare('INSERT INTO processed_files (filename, content_hash) VALUES (?, ?)').run(file, contentHash);
             count++;
         } catch (e) {
             console.error("Error processing " + file, e);

@@ -3,7 +3,10 @@ const db = require('better-sqlite3')('football.db');
 // Initialize Tables
 db.exec(`
   CREATE TABLE IF NOT EXISTS processed_files (
-    filename TEXT PRIMARY KEY
+    filename TEXT,
+    content_hash TEXT,
+    processed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (filename, content_hash)
   );
 
   CREATE TABLE IF NOT EXISTS teams (
