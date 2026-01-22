@@ -28,7 +28,7 @@ function parseGameFile(filePath) {
     
     const allGoals = [];
     teamsRaw.forEach(t => {
-        // "Varti" logic: Check inside VG first, then fallback
+        // Goals logic: Check inside VG first, then fallback
         const goals = asArray(t.Varti?.VG || t.Varti); 
         goals.forEach(g => allGoals.push(parseTime(g.Laiks)));
     });
@@ -46,7 +46,7 @@ function parseGameFile(filePath) {
         const subs = asArray(tRaw.Mainas?.Maina || tRaw.Mainas); 
         const cards = asArray(tRaw.Sodi?.Sods || tRaw.Sodi);
         
-        // Starters (Pamatsastavs) - Get list of IDs
+        // Starters - Get list of IDs
         const starters = asArray(tRaw.Pamatsastavs?.Speletajs).map(s => parseInt(s.Nr));
         const roster = asArray(tRaw.Speletaji?.Speletajs);
 
@@ -100,7 +100,7 @@ function parseGameFile(filePath) {
             };
         });
 
-        // Clean up output for the API (remove players with 0 stats if you want, or keep all)
+        // Clean up output for the API
         return {
             name: name,
             score: goals.length,

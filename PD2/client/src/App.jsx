@@ -8,18 +8,15 @@ function App() {
   const [playingTime, setPlayingTime] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [tableSort, setTableSort] = useState({ column: 'points', order: 'desc' });
-  const [scorersSort, setScorersSort] = useState({ column: 'goals', order: 'desc' });
-  const [penaltiesSort, setPenaltiesSort] = useState({ column: 'red_cards', order: 'desc' });
-  const [playingTimeSort, setPlayingTimeSort] = useState({ column: 'minutes_played', order: 'desc' });
 
+  // Data Loading Function
   const loadData = async () => {
     try {
         const [resTeams, resScorers, resPenalties, resPlayingTime] = await Promise.all([
             fetch('http://localhost:5000/api/table'),
             fetch('http://localhost:5000/api/scorers'),
             fetch('http://localhost:5000/api/penalties'),
-          fetch('http://localhost:5000/api/playing-time')
+            fetch('http://localhost:5000/api/playing-time')
         ]);
 
         setTeams(await resTeams.json());
@@ -31,6 +28,7 @@ function App() {
     }
   };
 
+  // Process Files Handler
   const handleScan = async () => {
     setLoading(true);
     setMessage("Processing files...");
@@ -47,55 +45,10 @@ function App() {
 
   useEffect(() => { loadData(); }, []);
 
-  // Sort function
-  const sortData = (data, column, order) => {
-    return [...data].sort((a, b) => {
-      const aVal = a[column];
-      const bVal = b[column];
-      if (typeof aVal === 'string') {
-        return order === 'desc' ? bVal.localeCompare(aVal) : aVal.localeCompare(bVal);
-      }
-      return order === 'desc' ? bVal - aVal : aVal - bVal;
-    });
-  };
-
-  // Handle sort click
-  const handleSort = (column, currentSort, setSortState) => {
-    const newOrder = currentSort.column === column && currentSort.order === 'desc' ? 'asc' : 'desc';
-    setSortState({ column, order: newOrder });
-  };
-
-  // Sort indicator
-  const SortIndicator = ({ column, currentSort }) => {
-    if (currentSort.column !== column) return <span style={{ marginLeft: '5px', opacity: 0.3 }}>↕</span>;
-    return <span style={{ marginLeft: '5px', color: '#007bff', fontWeight: 'bold' }}>{currentSort.order === 'desc' ? '↓' : '↑'}</span>;
-  };
-
-  // Enhanced Table Header with sorting
-  const SortableTableHeader = ({ cols, sortState, onSort }) => (
-    <thead className="table-light">
-        <tr>
-            {cols.map(c => (
-              c.sortable ? (
-                <th 
-                  key={c.key} 
-                  onClick={() => onSort(c.key, sortState)}
-                  className="text-start align-middle" 
-                  style={{ cursor: 'pointer', userSelect: 'none' }}>
-                  {c.label}<SortIndicator column={c.key} currentSort={sortState} />
-                </th>
-              ) : (
-                <th key={c.key} className="text-start align-middle">{c.label}</th>
-              )
-            ))}
-        </tr>
-    </thead>
-  );
-
   return (
     <div className="container py-4">
       <header className="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
-          <h1 className="h3 m-0">LFL Futbola Turnīrs</h1>
+          <h1 className="h3 m-0">Lielās Futbola Līgas (LFL) Turnīrs</h1>
           <div className="d-flex align-items-center gap-3">
             <span className="badge text-bg-success fs-6">{message}</span>
             <button 
@@ -116,20 +69,18 @@ function App() {
             <div className="card-header bg-white fw-bold">Turnīra Tabula</div>
             <div className="card-body p-0">
               <table className="table table-hover align-middle mb-0">
-                <SortableTableHeader 
-                  cols={[
-                    { key: 'position', label: '#', sortable: false },
-                    { key: 'name', label: 'Komanda', sortable: true },
-                    { key: 'points', label: 'Pkt', sortable: true },
-                    { key: 'goals', label: 'Vārti', sortable: false },
-                    { key: 'wins', label: 'U', sortable: true },
-                    { key: 'losses', label: 'Z', sortable: true }
-                  ]}
-                  sortState={tableSort}
-                  onSort={(col, state) => handleSort(col, state, setTableSort)}
-                />
+                <thead className="table-light">
+                    <tr>
+                        <th className="text-start align-middle">#</th>
+                        <th className="text-start align-middle">Komanda</th>
+                        <th className="text-start align-middle">Pkt</th>
+                        <th className="text-start align-middle">Vārti</th>
+                        <th className="text-start align-middle">U</th>
+                        <th className="text-start align-middle">Z</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    {sortData(teams, tableSort.column, tableSort.order).map((t, i) => (
+                    {teams.map((t, i) => (
                         <tr key={t.name}>
                             <td>{i + 1}.</td>
                             <td className="fw-semibold">{t.name}</td>
@@ -151,18 +102,16 @@ function App() {
             <div className="card-header bg-white fw-bold">Top Vārtu Guvēji</div>
             <div className="card-body p-0">
             <table className="table table-hover align-middle mb-0">
-                <SortableTableHeader 
-                  cols={[
-                    { key: 'position', label: '#', sortable: false },
-                    { key: 'name', label: 'Spēlētājs', sortable: true },
-                    { key: 'goals', label: 'G', sortable: true },
-                    { key: 'assists', label: 'A', sortable: true }
-                  ]}
-                  sortState={scorersSort}
-                  onSort={(col, state) => handleSort(col, state, setScorersSort)}
-                />
+              <thead className="table-light">
+                <tr>
+                  <th className="text-start align-middle">#</th>
+                  <th className="text-start align-middle">Spēlētājs</th>
+                  <th className="text-start align-middle">G</th>
+                  <th className="text-start align-middle">A</th>
+                </tr>
+              </thead>
                 <tbody>
-                    {sortData(scorers, scorersSort.column, scorersSort.order).map((p, i) => (
+                {scorers.map((p, i) => (
                         <tr key={p.id}>
                             <td>{i + 1}.</td>
                             <td>
@@ -189,18 +138,16 @@ function App() {
             <div className="card-header bg-white fw-bold">Sodi (Kartītes)</div>
             <div className="card-body p-0">
             <table className="table table-hover align-middle mb-0">
-                <SortableTableHeader 
-                  cols={[
-                    { key: 'name', label: 'Spēlētājs', sortable: true },
-                    { key: 'team', label: 'Komanda', sortable: true },
-                    { key: 'red_cards', label: 'Sarkanās', sortable: true },
-                    { key: 'yellow_cards', label: 'Dzeltenās', sortable: true }
-                  ]}
-                  sortState={penaltiesSort}
-                  onSort={(col, state) => handleSort(col, state, setPenaltiesSort)}
-                />
+              <thead className="table-light">
+                <tr>
+                  <th className="text-start align-middle">Spēlētājs</th>
+                  <th className="text-start align-middle">Komanda</th>
+                  <th className="text-start align-middle">Sarkanās</th>
+                  <th className="text-start align-middle">Dzeltenās</th>
+                </tr>
+              </thead>
                 <tbody>
-                    {sortData(penalties, penaltiesSort.column, penaltiesSort.order).map(p => (
+                {penalties.map(p => (
                         <tr key={p.id}>
                             <td className="fw-semibold">{p.name}</td>
                             <td>{p.team}</td>
@@ -220,18 +167,16 @@ function App() {
             <div className="card-header bg-white fw-bold">Spēles Laika Līderi</div>
             <div className="card-body p-0">
             <table className="table table-hover align-middle mb-0">
-                <SortableTableHeader 
-                  cols={[
-                    { key: 'name', label: 'Spēlētājs', sortable: true },
-                    { key: 'team', label: 'Komanda', sortable: true },
-                    { key: 'games_played', label: 'Spēles', sortable: true },
-                    { key: 'minutes_played', label: 'Minūtes', sortable: true }
-                  ]}
-                  sortState={playingTimeSort}
-                  onSort={(col, state) => handleSort(col, state, setPlayingTimeSort)}
-                />
+              <thead className="table-light">
+                <tr>
+                  <th className="text-start align-middle">Spēlētājs</th>
+                  <th className="text-start align-middle">Komanda</th>
+                  <th className="text-start align-middle">Spēles</th>
+                  <th className="text-start align-middle">Minūtes</th>
+                </tr>
+              </thead>
                 <tbody>
-                    {sortData(playingTime, playingTimeSort.column, playingTimeSort.order).map(p => (
+                {playingTime.map(p => (
                         <tr key={p.id}>
                             <td className="fw-semibold">{p.name}</td>
                             <td>{p.team}</td>
