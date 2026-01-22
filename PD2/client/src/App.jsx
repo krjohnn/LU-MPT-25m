@@ -4,8 +4,8 @@ import './App.css'
 function App() {
   const [teams, setTeams] = useState([]);
   const [scorers, setScorers] = useState([]);
-  const [penalties, setPenalties] = useState([]);      // NEW
-  const [ironmen, setIronmen] = useState([]); // NEW
+  const [penalties, setPenalties] = useState([]);
+  const [ironmen, setIronmen] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [tableSort, setTableSort] = useState({ column: 'points', order: 'desc' });
@@ -18,8 +18,8 @@ function App() {
         const [resTeams, resScorers, resPenalties, resIron] = await Promise.all([
             fetch('http://localhost:5000/api/table'),
             fetch('http://localhost:5000/api/scorers'),
-            fetch('http://localhost:5000/api/penalties'),    // NEW
-            fetch('http://localhost:5000/api/ironmen')  // NEW
+            fetch('http://localhost:5000/api/penalties'),
+            fetch('http://localhost:5000/api/ironmen')
         ]);
 
         setTeams(await resTeams.json());
@@ -73,24 +73,19 @@ function App() {
 
   // Enhanced Table Header with sorting
   const SortableTableHeader = ({ cols, sortState, onSort }) => (
-    <thead style={{ background: '#f0f0f0', borderBottom: '2px solid #ddd' }}>
+    <thead className="table-light">
         <tr>
             {cols.map(c => (
               c.sortable ? (
                 <th 
                   key={c.key} 
                   onClick={() => onSort(c.key, sortState)}
-                  style={{ 
-                    padding: '10px', 
-                    textAlign: 'left', 
-                    cursor: 'pointer',
-                    userSelect: 'none',
-                    backgroundColor: sortState.column === c.key ? '#e8e8e8' : '#f0f0f0'
-                  }}>
+                  className="text-start align-middle" 
+                  style={{ cursor: 'pointer', userSelect: 'none' }}>
                   {c.label}<SortIndicator column={c.key} currentSort={sortState} />
                 </th>
               ) : (
-                <th key={c.key} style={{ padding: '10px', textAlign: 'left' }}>{c.label}</th>
+                <th key={c.key} className="text-start align-middle">{c.label}</th>
               )
             ))}
         </tr>
@@ -98,30 +93,29 @@ function App() {
   );
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial', maxWidth: '1200px', margin: '0 auto' }}>
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-          <h1>LFL Futbola Turnīrs</h1>
-          <div>
-            <span style={{ marginRight: '15px', color: 'green', fontWeight: 'bold' }}>{message}</span>
+    <div className="container py-4">
+      <header className="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+          <h1 className="h3 m-0">LFL Futbola Turnīrs</h1>
+          <div className="d-flex align-items-center gap-3">
+            <span className="badge text-bg-success fs-6">{message}</span>
             <button 
                 onClick={handleScan} 
                 disabled={loading} 
-                style={{ 
-                    padding: '10px 20px', fontSize: '16px', background: '#007bff', 
-                    color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' 
-                }}>
+                className="btn btn-primary fw-semibold">
                 {loading ? 'Apstrādā...' : 'Ielādēt Datus'}
             </button>
           </div>
       </header>
 
       {/* ROW 1: Main Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '20px', marginBottom: '40px' }}>
+      <div className="row g-4 mb-4">
         
         {/* TABLE 1: Standings */}
-        <div className="card">
-            <h2>Turnīra Tabula</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="col-lg-8">
+          <div className="card shadow-sm h-100">
+            <div className="card-header bg-white fw-bold">Turnīra Tabula</div>
+            <div className="card-body p-0">
+              <table className="table table-hover align-middle mb-0">
                 <SortableTableHeader 
                   cols={[
                     { key: 'position', label: '#', sortable: false },
@@ -136,23 +130,27 @@ function App() {
                 />
                 <tbody>
                     {sortData(teams, tableSort.column, tableSort.order).map((t, i) => (
-                        <tr key={t.name} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '8px' }}>{i + 1}.</td>
-                            <td style={{ padding: '8px', fontWeight: 'bold' }}>{t.name}</td>
-                            <td style={{ padding: '8px', fontSize: '1.1em' }}>{t.points}</td>
-                            <td style={{ padding: '8px' }}>{t.goals_scored}:{t.goals_conceded}</td>
-                            <td style={{ padding: '8px' }}>{t.games_won_reg + t.games_won_ot}</td>
-                            <td style={{ padding: '8px' }}>{t.games_lost_reg + t.games_lost_ot}</td>
+                        <tr key={t.name}>
+                            <td>{i + 1}.</td>
+                            <td className="fw-semibold">{t.name}</td>
+                            <td className="fw-semibold">{t.points}</td>
+                            <td>{t.goals_scored}:{t.goals_conceded}</td>
+                            <td>{t.games_won_reg + t.games_won_ot}</td>
+                            <td>{t.games_lost_reg + t.games_lost_ot}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
+          </div>
         </div>
 
         {/* TABLE 2: Scorers */}
-        <div className="card">
-            <h2>Top Vārtu Guvēji</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="col-lg-4">
+          <div className="card shadow-sm h-100">
+            <div className="card-header bg-white fw-bold">Top Vārtu Guvēji</div>
+            <div className="card-body p-0">
+            <table className="table table-hover align-middle mb-0">
                 <SortableTableHeader 
                   cols={[
                     { key: 'position', label: '#', sortable: false },
@@ -165,28 +163,32 @@ function App() {
                 />
                 <tbody>
                     {sortData(scorers, scorersSort.column, scorersSort.order).map((p, i) => (
-                        <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '8px' }}>{i + 1}.</td>
-                            <td style={{ padding: '8px' }}>
-                                <div>{p.name}</div>
-                                <div style={{ fontSize: '0.8em', color: '#666' }}>{p.team}</div>
+                        <tr key={p.id}>
+                            <td>{i + 1}.</td>
+                            <td>
+                                <div className="fw-semibold">{p.name}</div>
+                                <div className="text-secondary small">{p.team}</div>
                             </td>
-                            <td style={{ padding: '8px', fontWeight: 'bold' }}>{p.goals}</td>
-                            <td style={{ padding: '8px', color: '#666' }}>{p.assists}</td>
+                            <td className="fw-semibold">{p.goals}</td>
+                            <td className="text-secondary">{p.assists}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* ROW 2: Extra Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+      <div className="row g-4">
         
         {/* TABLE 3: Penalties (Cards) */}
-        <div className="card">
-            <h2>Sodi (Kartītes)</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="col-lg-6">
+          <div className="card shadow-sm h-100">
+            <div className="card-header bg-white fw-bold">Sodi (Kartītes)</div>
+            <div className="card-body p-0">
+            <table className="table table-hover align-middle mb-0">
                 <SortableTableHeader 
                   cols={[
                     { key: 'name', label: 'Spēlētājs', sortable: true },
@@ -199,21 +201,25 @@ function App() {
                 />
                 <tbody>
                     {sortData(penalties, penaltiesSort.column, penaltiesSort.order).map(p => (
-                        <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '8px' }}>{p.name}</td>
-                            <td style={{ padding: '8px' }}>{p.team}</td>
-                            <td style={{ padding: '8px', color: 'red', fontWeight: 'bold' }}>{p.red_cards}</td>
-                            <td style={{ padding: '8px', color: '#d4a017', fontWeight: 'bold' }}>{p.yellow_cards}</td>
+                        <tr key={p.id}>
+                            <td className="fw-semibold">{p.name}</td>
+                            <td>{p.team}</td>
+                               <td className="fw-bold text-dark bg-danger-subtle">{p.red_cards}</td>
+                               <td className="fw-bold text-dark bg-warning-subtle">{p.yellow_cards} </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
+          </div>
         </div>
 
         {/* TABLE 4: Iron Men */}
-        <div className="card">
-            <h2>Dzelzs Vīri (Minūtes)</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="col-lg-6">
+          <div className="card shadow-sm h-100">
+            <div className="card-header bg-white fw-bold">Dzelzs Vīri (Minūtes)</div>
+            <div className="card-body p-0">
+            <table className="table table-hover align-middle mb-0">
                 <SortableTableHeader 
                   cols={[
                     { key: 'name', label: 'Spēlētājs', sortable: true },
@@ -226,15 +232,17 @@ function App() {
                 />
                 <tbody>
                     {sortData(ironmen, ironmenSort.column, ironmenSort.order).map(p => (
-                        <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '8px' }}>{p.name}</td>
-                            <td style={{ padding: '8px' }}>{p.team}</td>
-                            <td style={{ padding: '8px' }}>{p.games_played}</td>
-                            <td style={{ padding: '8px', fontWeight: 'bold' }}>{p.minutes_played}</td>
+                        <tr key={p.id}>
+                            <td className="fw-semibold">{p.name}</td>
+                            <td>{p.team}</td>
+                            <td>{p.games_played}</td>
+                            <td className="fw-semibold">{p.minutes_played}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
+          </div>
         </div>
       </div>
 
