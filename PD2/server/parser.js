@@ -1,18 +1,17 @@
 const fs = require('fs');
 
-// --- HELPER 1: TIME MATH ---
-// Converts "60:30" -> 60.5 minutes
+// --- HELPER: Time conversions ---
+// Converts "60:30" -> 60.5 minutes because we need it for calculations (sorting, comparisons, etc.)
 const parseTime = (timeStr) => {
     if (!timeStr || typeof timeStr !== 'string') return 0;
     const parts = timeStr.split(':');
     return parseInt(parts[0]) + (parseInt(parts[1]) / 60);
 };
 
-// --- HELPER 2: TRAP FIXER ---
-// Fixes the issue where data is sometimes an Object, Array, or Empty String
+// --- HELPER: Fixing Data Structure Issues ---
 const asArray = (val) => {
     if (!val) return [];
-    if (typeof val === 'string' && val.trim() === '') return []; // Fixes "Varti": ""
+    if (typeof val === 'string' && val.trim() === '') return []; // Empty string case
     return Array.isArray(val) ? val : [val];
 };
 
@@ -21,9 +20,11 @@ function parseGameFile(filePath) {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const root = JSON.parse(raw).Spele;
 
-    // 1. DETERMINE GAME DURATION (Check for Overtime)
+    // console.log(root);
+
+    // DETERMINE GAME DURATION (Check for Overtime)
     let gameEndTime = 60.0;
-    const teamsRaw = asArray(root.Komanda);
+    const teamsRaw = asArray(root.Komand);
     
     const allGoals = [];
     teamsRaw.forEach(t => {
@@ -38,7 +39,7 @@ function parseGameFile(filePath) {
         console.log(`Overtime Detected! Game ended at ${gameEndTime.toFixed(2)} mins`);
     }
 
-    // 2. CALCULATE PLAYER STATS
+    // CALCULATE PLAYER STATS
     const teams = teamsRaw.map(tRaw => {
         const name = tRaw.Nosaukums;
         const goals = asArray(tRaw.Varti?.VG || tRaw.Varti); 
