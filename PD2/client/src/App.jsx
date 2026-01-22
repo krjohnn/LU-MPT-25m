@@ -8,6 +8,10 @@ function App() {
   const [ironmen, setIronmen] = useState([]); // NEW
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [tableSort, setTableSort] = useState({ column: 'points', order: 'desc' });
+  const [scorersSort, setScorersSort] = useState({ column: 'goals', order: 'desc' });
+  const [rudeSort, setRudeSort] = useState({ column: 'red_cards', order: 'desc' });
+  const [ironmenSort, setIronmenSort] = useState({ column: 'minutes_played', order: 'desc' });
 
   const loadData = async () => {
     try {
@@ -43,11 +47,52 @@ function App() {
 
   useEffect(() => { loadData(); }, []);
 
-  // Helper for consistent table styling
-  const TableHeader = ({ cols }) => (
+  // Sort function
+  const sortData = (data, column, order) => {
+    return [...data].sort((a, b) => {
+      const aVal = a[column];
+      const bVal = b[column];
+      if (typeof aVal === 'string') {
+        return order === 'desc' ? bVal.localeCompare(aVal) : aVal.localeCompare(bVal);
+      }
+      return order === 'desc' ? bVal - aVal : aVal - bVal;
+    });
+  };
+
+  // Handle sort click
+  const handleSort = (column, currentSort, setSortState) => {
+    const newOrder = currentSort.column === column && currentSort.order === 'desc' ? 'asc' : 'desc';
+    setSortState({ column, order: newOrder });
+  };
+
+  // Sort indicator
+  const SortIndicator = ({ column, currentSort }) => {
+    if (currentSort.column !== column) return <span style={{ marginLeft: '5px', opacity: 0.3 }}>↕</span>;
+    return <span style={{ marginLeft: '5px', color: '#007bff', fontWeight: 'bold' }}>{currentSort.order === 'desc' ? '↓' : '↑'}</span>;
+  };
+
+  // Enhanced Table Header with sorting
+  const SortableTableHeader = ({ cols, sortState, onSort }) => (
     <thead style={{ background: '#f0f0f0', borderBottom: '2px solid #ddd' }}>
         <tr>
-            {cols.map(c => <th key={c} style={{ padding: '10px', textAlign: 'left' }}>{c}</th>)}
+            {cols.map(c => (
+              c.sortable ? (
+                <th 
+                  key={c.key} 
+                  onClick={() => onSort(c.key, sortState)}
+                  style={{ 
+                    padding: '10px', 
+                    textAlign: 'left', 
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    backgroundColor: sortState.column === c.key ? '#e8e8e8' : '#f0f0f0'
+                  }}>
+                  {c.label}<SortIndicator column={c.key} currentSort={sortState} />
+                </th>
+              ) : (
+                <th key={c.key} style={{ padding: '10px', textAlign: 'left' }}>{c.label}</th>
+              )
+            ))}
         </tr>
     </thead>
   );
@@ -77,9 +122,20 @@ function App() {
         <div className="card">
             <h2>Turnīra Tabula</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <TableHeader cols={['#', 'Komanda', 'Pkt', 'Vārti', 'U', 'Z']} />
+                <SortableTableHeader 
+                  cols={[
+                    { key: 'position', label: '#', sortable: false },
+                    { key: 'name', label: 'Komanda', sortable: true },
+                    { key: 'points', label: 'Pkt', sortable: true },
+                    { key: 'goals', label: 'Vārti', sortable: false },
+                    { key: 'wins', label: 'U', sortable: true },
+                    { key: 'losses', label: 'Z', sortable: true }
+                  ]}
+                  sortState={tableSort}
+                  onSort={(col, state) => handleSort(col, state, setTableSort)}
+                />
                 <tbody>
-                    {teams.map((t, i) => (
+                    {sortData(teams, tableSort.column, tableSort.order).map((t, i) => (
                         <tr key={t.name} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '8px' }}>{i + 1}.</td>
                             <td style={{ padding: '8px', fontWeight: 'bold' }}>{t.name}</td>
@@ -97,9 +153,18 @@ function App() {
         <div className="card">
             <h2>Top Vārtu Guvēji</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <TableHeader cols={['#', 'Spēlētājs', 'G', 'A']} />
+                <SortableTableHeader 
+                  cols={[
+                    { key: 'position', label: '#', sortable: false },
+                    { key: 'name', label: 'Spēlētājs', sortable: true },
+                    { key: 'goals', label: 'G', sortable: true },
+                    { key: 'assists', label: 'A', sortable: true }
+                  ]}
+                  sortState={scorersSort}
+                  onSort={(col, state) => handleSort(col, state, setScorersSort)}
+                />
                 <tbody>
-                    {scorers.map((p, i) => (
+                    {sortData(scorers, scorersSort.column, scorersSort.order).map((p, i) => (
                         <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '8px' }}>{i + 1}.</td>
                             <td style={{ padding: '8px' }}>
@@ -122,9 +187,18 @@ function App() {
         <div className="card">
             <h2>Rupjākie Spēlētāji</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <TableHeader cols={['Spēlētājs', 'Komanda', 'Sarkanās', 'Dzeltenās']} />
+                <SortableTableHeader 
+                  cols={[
+                    { key: 'name', label: 'Spēlētājs', sortable: true },
+                    { key: 'team', label: 'Komanda', sortable: true },
+                    { key: 'red_cards', label: 'Sarkanās', sortable: true },
+                    { key: 'yellow_cards', label: 'Dzeltenās', sortable: true }
+                  ]}
+                  sortState={rudeSort}
+                  onSort={(col, state) => handleSort(col, state, setRudeSort)}
+                />
                 <tbody>
-                    {rude.map(p => (
+                    {sortData(rude, rudeSort.column, rudeSort.order).map(p => (
                         <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '8px' }}>{p.name}</td>
                             <td style={{ padding: '8px' }}>{p.team}</td>
@@ -140,9 +214,18 @@ function App() {
         <div className="card">
             <h2>Dzelzs Vīri (Minūtes)</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <TableHeader cols={['Spēlētājs', 'Komanda', 'Spēles', 'Minūtes']} />
+                <SortableTableHeader 
+                  cols={[
+                    { key: 'name', label: 'Spēlētājs', sortable: true },
+                    { key: 'team', label: 'Komanda', sortable: true },
+                    { key: 'games_played', label: 'Spēles', sortable: true },
+                    { key: 'minutes_played', label: 'Minūtes', sortable: true }
+                  ]}
+                  sortState={ironmenSort}
+                  onSort={(col, state) => handleSort(col, state, setIronmenSort)}
+                />
                 <tbody>
-                    {ironmen.map(p => (
+                    {sortData(ironmen, ironmenSort.column, ironmenSort.order).map(p => (
                         <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
                             <td style={{ padding: '8px' }}>{p.name}</td>
                             <td style={{ padding: '8px' }}>{p.team}</td>
