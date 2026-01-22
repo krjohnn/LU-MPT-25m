@@ -1,0 +1,255 @@
+{"Spele": {
+ "Laiks": "2022/02/28",
+ "Skatitaji": 7100,
+ "Vieta": "Central Arena",
+ "T": [
+  {
+   "Uzvards": "Nielsen",
+   "Vards": "Lars"
+  },
+  {
+   "Uzvards": "Schmidt",
+   "Vards": "Hans"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Skolmeistari",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Debess",
+     "Vards": "Nils"
+    },
+    {
+     "Loma": "A",
+     "Nr": 21,
+     "Uzvards": "Zibens",
+     "Vards": "Vilhelms"
+    },
+    {
+     "Loma": "V",
+     "Nr": 22,
+     "Uzvards": "Rausis",
+     "Vards": "Vidmants"
+    },
+    {
+     "Loma": "A",
+     "Nr": 25,
+     "Uzvards": "Zibens",
+     "Vards": "Janka"
+    },
+    {
+     "Loma": "U",
+     "Nr": 28,
+     "Uzvards": "Palodze",
+     "Vards": "Rihards"
+    },
+    {
+     "Loma": "A",
+     "Nr": 30,
+     "Uzvards": "Paraugs",
+     "Vards": "Ciltvairis"
+    },
+    {
+     "Loma": "U",
+     "Nr": 34,
+     "Uzvards": "Grants",
+     "Vards": "Linards"
+    },
+    {
+     "Loma": "U",
+     "Nr": 36,
+     "Uzvards": "Rokturis",
+     "Vards": "Francis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 39,
+     "Uzvards": "Svilpe",
+     "Vards": "Einars"
+    },
+    {
+     "Loma": "V",
+     "Nr": 41,
+     "Uzvards": "Zirnis",
+     "Vards": "Anderss"
+    },
+    {
+     "Loma": "A",
+     "Nr": 44,
+     "Uzvards": "Kompass",
+     "Vards": "Rolands"
+    },
+    {
+     "Loma": "U",
+     "Nr": 47,
+     "Uzvards": "Kabacis",
+     "Vards": "Kens"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 22},
+    {"Nr": 9},
+    {"Nr": 21},
+    {"Nr": 28},
+    {"Nr": 30},
+    {"Nr": 34},
+    {"Nr": 36},
+    {"Nr": 39},
+    {"Nr": 47}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "12:20",
+     "P": {"Nr": 28},
+     "Nr": 9,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "35:10",
+     "P": [
+      {"Nr": 9},
+      {"Nr": 30}
+     ],
+     "Nr": 39,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "50:30",
+     "Nr": 47,
+     "Sitiens": "J"
+    }
+   ]},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "30:00",
+     "Nr1": 21,
+     "Nr2": 44
+    },
+    {
+     "Laiks": "45:15",
+     "Nr1": 28,
+     "Nr2": 25
+    }
+   ]},
+   "Sodi": {"Sods": {
+    "Laiks": "42:50",
+    "Nr": 36
+   }}
+  },
+  {
+   "Nosaukums": "Dinamo",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Berzins",
+     "Vards": "Janis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Kalnins",
+     "Vards": "Martins"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Ozols",
+     "Vards": "Roberts"
+    },
+    {
+     "Loma": "U",
+     "Nr": 10,
+     "Uzvards": "Liepins",
+     "Vards": "Andris"
+    },
+    {
+     "Loma": "U",
+     "Nr": 11,
+     "Uzvards": "Krumins",
+     "Vards": "Arturs"
+    },
+    {
+     "Loma": "A",
+     "Nr": 14,
+     "Uzvards": "Balodis",
+     "Vards": "Edgars"
+    },
+    {
+     "Loma": "U",
+     "Nr": 18,
+     "Uzvards": "Vītols",
+     "Vards": "Kristaps"
+    },
+    {
+     "Loma": "A",
+     "Nr": 22,
+     "Uzvards": "Silins",
+     "Vards": "Ralfs"
+    },
+    {
+     "Loma": "U",
+     "Nr": 25,
+     "Uzvards": "Straume",
+     "Vards": "Eduards"
+    },
+    {
+     "Loma": "V",
+     "Nr": 88,
+     "Uzvards": "Liepa",
+     "Vards": "Viktors"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 5},
+    {"Nr": 7},
+    {"Nr": 10},
+    {"Nr": 11},
+    {"Nr": 14},
+    {"Nr": 18},
+    {"Nr": 22},
+    {"Nr": 25}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "08:40",
+     "P": {"Nr": 10},
+     "Nr": 11,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "55:20",
+     "P": [
+      {"Nr": 7},
+      {"Nr": 14}
+     ],
+     "Nr": 10,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": {
+    "Laiks": "52:30",
+    "Nr1": 22,
+    "Nr2": 88
+   }},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "20:15",
+     "Nr": 5
+    },
+    {
+     "Laiks": "48:40",
+     "Nr": 14
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Petrov",
+  "Vards": "Ivan"
+ }
+}}

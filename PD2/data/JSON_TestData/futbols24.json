@@ -1,0 +1,255 @@
+{"Spele": {
+ "Laiks": "2022/03/05",
+ "Skatitaji": 9500,
+ "Vieta": "Olympic Stadium",
+ "T": [
+  {
+   "Uzvards": "Brown",
+   "Vards": "Michael"
+  },
+  {
+   "Uzvards": "Wilson",
+   "Vards": "Robert"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Spartak",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 2,
+     "Uzvards": "Mednis",
+     "Vards": "Karlis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 4,
+     "Uzvards": "Lacis",
+     "Vards": "Juris"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Rubenis",
+     "Vards": "Valdis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 12,
+     "Uzvards": "Puķe",
+     "Vards": "Gatis"
+    },
+    {
+     "Loma": "U",
+     "Nr": 15,
+     "Uzvards": "Ziema",
+     "Vards": "Peteris"
+    },
+    {
+     "Loma": "A",
+     "Nr": 19,
+     "Uzvards": "Svētki",
+     "Vards": "Marcis"
+    },
+    {
+     "Loma": "U",
+     "Nr": 23,
+     "Uzvards": "Dūriens",
+     "Vards": "Oskars"
+    },
+    {
+     "Loma": "A",
+     "Nr": 26,
+     "Uzvards": "Celms",
+     "Vards": "Toms"
+    },
+    {
+     "Loma": "U",
+     "Nr": 31,
+     "Uzvards": "Kalns",
+     "Vards": "Raimonds"
+    },
+    {
+     "Loma": "V",
+     "Nr": 99,
+     "Uzvards": "Sala",
+     "Vards": "Normunds"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 2},
+    {"Nr": 4},
+    {"Nr": 8},
+    {"Nr": 12},
+    {"Nr": 15},
+    {"Nr": 19},
+    {"Nr": 23},
+    {"Nr": 26},
+    {"Nr": 31}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "18:25",
+     "P": {"Nr": 8},
+     "Nr": 15,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "44:10",
+     "P": [
+      {"Nr": 15},
+      {"Nr": 23}
+     ],
+     "Nr": 19,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "58:05",
+     "Nr": 26,
+     "Sitiens": "J"
+    }
+   ]},
+   "Mainas": {"Maina": {
+    "Laiks": "50:00",
+    "Nr1": 4,
+    "Nr2": 99
+   }},
+   "Sodi": {"Sods": {
+    "Laiks": "35:30",
+    "Nr": 12
+   }}
+  },
+  {
+   "Nosaukums": "Veiklie",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "U",
+     "Nr": 11,
+     "Uzvards": "Pitagors",
+     "Vards": "Saulvedis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 13,
+     "Uzvards": "Svilpe",
+     "Vards": "Janka"
+    },
+    {
+     "Loma": "A",
+     "Nr": 16,
+     "Uzvards": "Rums",
+     "Vards": "Harijs"
+    },
+    {
+     "Loma": "A",
+     "Nr": 18,
+     "Uzvards": "Eholots",
+     "Vards": "Ciltvairis"
+    },
+    {
+     "Loma": "V",
+     "Nr": 27,
+     "Uzvards": "Pitagors",
+     "Vards": "Gints"
+    },
+    {
+     "Loma": "U",
+     "Nr": 36,
+     "Uzvards": "Pipars",
+     "Vards": "Tims"
+    },
+    {
+     "Loma": "U",
+     "Nr": 38,
+     "Uzvards": "Paraugs",
+     "Vards": "Ciltvairis"
+    },
+    {
+     "Loma": "A",
+     "Nr": 40,
+     "Uzvards": "Draugs",
+     "Vards": "Saulvedis"
+    },
+    {
+     "Loma": "U",
+     "Nr": 52,
+     "Uzvards": "Pudele",
+     "Vards": "Saulvedis"
+    },
+    {
+     "Loma": "U",
+     "Nr": 58,
+     "Uzvards": "Rums",
+     "Vards": "Vidmants"
+    },
+    {
+     "Loma": "A",
+     "Nr": 63,
+     "Uzvards": "Zilonis",
+     "Vards": "Valters"
+    },
+    {
+     "Loma": "V",
+     "Nr": 71,
+     "Uzvards": "Rokturis",
+     "Vards": "Igors"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 27},
+    {"Nr": 11},
+    {"Nr": 13},
+    {"Nr": 16},
+    {"Nr": 18},
+    {"Nr": 36},
+    {"Nr": 40},
+    {"Nr": 52},
+    {"Nr": 63}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "25:15",
+     "P": {"Nr": 11},
+     "Nr": 18,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "40:50",
+     "P": [
+      {"Nr": 18},
+      {"Nr": 13}
+     ],
+     "Nr": 40,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "38:20",
+     "Nr1": 16,
+     "Nr2": 58
+    },
+    {
+     "Laiks": "55:40",
+     "Nr1": 13,
+     "Nr2": 38
+    }
+   ]},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "30:25",
+     "Nr": 18
+    },
+    {
+     "Laiks": "47:15",
+     "Nr": 52
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Johnson",
+  "Vards": "David"
+ }
+}}
