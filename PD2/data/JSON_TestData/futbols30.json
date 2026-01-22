@@ -1,0 +1,282 @@
+{"Spele": {
+ "Laiks": "2022/04/20",
+ "Skatitaji": 12500,
+ "Vieta": "Camp Nou",
+ "T": [
+  {
+   "Uzvards": "Garcia",
+   "Vards": "Antonio"
+  },
+  {
+   "Uzvards": "Silva",
+   "Vards": "Roberto"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Barcelona",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Courtois",
+     "Vards": "Thibaut"
+    },
+    {
+     "Loma": "A",
+     "Nr": 4,
+     "Uzvards": "Ramos",
+     "Vards": "Sergio"
+    },
+    {
+     "Loma": "A",
+     "Nr": 6,
+     "Uzvards": "Nacho",
+     "Vards": "Fernandez"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Kroos",
+     "Vards": "Toni"
+    },
+    {
+     "Loma": "U",
+     "Nr": 10,
+     "Uzvards": "Modric",
+     "Vards": "Luka"
+    },
+    {
+     "Loma": "U",
+     "Nr": 15,
+     "Uzvards": "Valverde",
+     "Vards": "Federico"
+    },
+    {
+     "Loma": "U",
+     "Nr": 20,
+     "Uzvards": "Vinicius",
+     "Vards": "Junior"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Hazard",
+     "Vards": "Eden"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Benzema",
+     "Vards": "Karim"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Asensio",
+     "Vards": "Marco"
+    },
+    {
+     "Loma": "A",
+     "Nr": 12,
+     "Uzvards": "Marcelo",
+     "Vards": "Vieira"
+    },
+    {
+     "Loma": "U",
+     "Nr": 14,
+     "Uzvards": "Casemiro",
+     "Vards": "Carlos"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 4},
+    {"Nr": 6},
+    {"Nr": 8},
+    {"Nr": 10},
+    {"Nr": 15},
+    {"Nr": 20},
+    {"Nr": 7},
+    {"Nr": 9}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "12:45",
+     "P": [
+      {"Nr": 10},
+      {"Nr": 20}
+     ],
+     "Nr": 9,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "28:30",
+     "P": {"Nr": 8},
+     "Nr": 9,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "55:12",
+     "P": [
+      {"Nr": 15},
+      {"Nr": 9}
+     ],
+     "Nr": 7,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "72:08",
+     "P": {"Nr": 7},
+     "Nr": 20,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "62:00",
+     "Nr1": 15,
+     "Nr2": 14
+    },
+    {
+     "Laiks": "75:30",
+     "Nr1": 7,
+     "Nr2": 11
+    }
+   ]},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "35:20",
+     "Nr": 4
+    },
+    {
+     "Laiks": "68:45",
+     "Nr": 14
+    }
+   ]}
+  },
+  {
+   "Nosaukums": "Bayern Munich",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Neuer",
+     "Vards": "Manuel"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Pavard",
+     "Vards": "Benjamin"
+    },
+    {
+     "Loma": "A",
+     "Nr": 17,
+     "Uzvards": "Boateng",
+     "Vards": "Jerome"
+    },
+    {
+     "Loma": "A",
+     "Nr": 21,
+     "Uzvards": "Hernandez",
+     "Vards": "Lucas"
+    },
+    {
+     "Loma": "U",
+     "Nr": 6,
+     "Uzvards": "Kimmich",
+     "Vards": "Joshua"
+    },
+    {
+     "Loma": "U",
+     "Nr": 18,
+     "Uzvards": "Goretzka",
+     "Vards": "Leon"
+    },
+    {
+     "Loma": "U",
+     "Nr": 42,
+     "Uzvards": "Musiala",
+     "Vards": "Jamal"
+    },
+    {
+     "Loma": "A",
+     "Nr": 10,
+     "Uzvards": "Sane",
+     "Vards": "Leroy"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Lewandowski",
+     "Vards": "Robert"
+    },
+    {
+     "Loma": "A",
+     "Nr": 25,
+     "Uzvards": "Muller",
+     "Vards": "Thomas"
+    },
+    {
+     "Loma": "U",
+     "Nr": 29,
+     "Uzvards": "Coman",
+     "Vards": "Kingsley"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 5},
+    {"Nr": 17},
+    {"Nr": 21},
+    {"Nr": 6},
+    {"Nr": 18},
+    {"Nr": 10},
+    {"Nr": 9},
+    {"Nr": 25}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "18:22",
+     "P": {"Nr": 25},
+     "Nr": 9,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "44:15",
+     "P": [
+      {"Nr": 6},
+      {"Nr": 18}
+     ],
+     "Nr": 10,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": {
+    "Laiks": "70:00",
+    "Nr1": 10,
+    "Nr2": 42
+   }},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "52:30",
+     "Nr": 17
+    },
+    {
+     "Laiks": "80:12",
+     "Nr": 6
+    },
+    {
+     "Laiks": "88:45",
+     "Nr": 21,
+     "Veids": "sarkanā"
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Neuer",
+  "Vards": "Manuel"
+ }
+}}

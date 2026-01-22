@@ -1,0 +1,266 @@
+{"Spele": {
+ "Laiks": "2022/03/05",
+ "Skatitaji": 6180,
+ "Vieta": "Parc des Princes",
+ "T": [
+  {
+   "Uzvards": "Dubois",
+   "Vards": "Pierre"
+  },
+  {
+   "Uzvards": "Martin",
+   "Vards": "Jean"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "PSG",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Donnarumma",
+     "Vards": "Gianluigi"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Marquinhos",
+     "Vards": "Correa"
+    },
+    {
+     "Loma": "A",
+     "Nr": 3,
+     "Uzvards": "Kimpembe",
+     "Vards": "Presnel"
+    },
+    {
+     "Loma": "A",
+     "Nr": 2,
+     "Uzvards": "Hakimi",
+     "Vards": "Achraf"
+    },
+    {
+     "Loma": "U",
+     "Nr": 6,
+     "Uzvards": "Verratti",
+     "Vards": "Marco"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Paredes",
+     "Vards": "Leandro"
+    },
+    {
+     "Loma": "U",
+     "Nr": 27,
+     "Uzvards": "Gueye",
+     "Vards": "Idrissa"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Mbappe",
+     "Vards": "Kylian"
+    },
+    {
+     "Loma": "A",
+     "Nr": 10,
+     "Uzvards": "Neymar",
+     "Vards": "Junior"
+    },
+    {
+     "Loma": "A",
+     "Nr": 30,
+     "Uzvards": "Messi",
+     "Vards": "Lionel"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Di Maria",
+     "Vards": "Angel"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 5},
+    {"Nr": 3},
+    {"Nr": 2},
+    {"Nr": 6},
+    {"Nr": 8},
+    {"Nr": 27},
+    {"Nr": 7},
+    {"Nr": 10},
+    {"Nr": 30}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "10:30",
+     "P": [
+      {"Nr": 30},
+      {"Nr": 10}
+     ],
+     "Nr": 7,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "24:15",
+     "P": {"Nr": 7},
+     "Nr": 10,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "42:50",
+     "P": [
+      {"Nr": 2},
+      {"Nr": 6}
+     ],
+     "Nr": 30,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "68:20",
+     "P": {"Nr": 30},
+     "Nr": 7,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "83:45",
+     "P": [
+      {"Nr": 10},
+      {"Nr": 7}
+     ],
+     "Nr": 11,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": {
+    "Laiks": "76:00",
+    "Nr1": 8,
+    "Nr2": 11
+   }},
+   "Sodi": {"Sods": {
+    "Laiks": "55:10",
+    "Nr": 27
+   }}
+  },
+  {
+   "Nosaukums": "Lyon",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Lopes",
+     "Vards": "Anthony"
+    },
+    {
+     "Loma": "A",
+     "Nr": 4,
+     "Uzvards": "Denayer",
+     "Vards": "Jason"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Boateng",
+     "Vards": "Jerome"
+    },
+    {
+     "Loma": "A",
+     "Nr": 3,
+     "Uzvards": "Emerson",
+     "Vards": "Palmieri"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Aouar",
+     "Vards": "Houssem"
+    },
+    {
+     "Loma": "U",
+     "Nr": 23,
+     "Uzvards": "Guimaraes",
+     "Vards": "Bruno"
+    },
+    {
+     "Loma": "U",
+     "Nr": 25,
+     "Uzvards": "Caqueret",
+     "Vards": "Maxence"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Toko Ekambi",
+     "Vards": "Karl"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Dembele",
+     "Vards": "Moussa"
+    },
+    {
+     "Loma": "A",
+     "Nr": 10,
+     "Uzvards": "Lacazette",
+     "Vards": "Alexandre"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 4},
+    {"Nr": 5},
+    {"Nr": 3},
+    {"Nr": 8},
+    {"Nr": 23},
+    {"Nr": 25},
+    {"Nr": 7},
+    {"Nr": 9}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "18:40",
+     "P": [
+      {"Nr": 8},
+      {"Nr": 23}
+     ],
+     "Nr": 9,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "75:25",
+     "P": {"Nr": 7},
+     "Nr": 10,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": {
+    "Laiks": "68:00",
+    "Nr1": 9,
+    "Nr2": 10
+   }},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "36:20",
+     "Nr": 5
+    },
+    {
+     "Laiks": "62:45",
+     "Nr": 25
+    },
+    {
+     "Laiks": "88:10",
+     "Nr": 4
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Mbappe",
+  "Vards": "Kylian"
+ }
+}}

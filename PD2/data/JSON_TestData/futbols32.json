@@ -1,0 +1,253 @@
+{"Spele": {
+ "Laiks": "2022/02/22",
+ "Skatitaji": 5630,
+ "Vieta": "Stamford Bridge",
+ "T": [
+  {
+   "Uzvards": "Taylor",
+   "Vards": "Anthony"
+  },
+  {
+   "Uzvards": "Oliver",
+   "Vards": "Michael"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Chelsea",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 16,
+     "Uzvards": "Mendy",
+     "Vards": "Edouard"
+    },
+    {
+     "Loma": "A",
+     "Nr": 6,
+     "Uzvards": "Thiago Silva",
+     "Vards": "da Silva"
+    },
+    {
+     "Loma": "A",
+     "Nr": 2,
+     "Uzvards": "Rudiger",
+     "Vards": "Antonio"
+    },
+    {
+     "Loma": "A",
+     "Nr": 28,
+     "Uzvards": "Azpilicueta",
+     "Vards": "Cesar"
+    },
+    {
+     "Loma": "U",
+     "Nr": 5,
+     "Uzvards": "Jorginho",
+     "Vards": "Frello"
+    },
+    {
+     "Loma": "U",
+     "Nr": 7,
+     "Uzvards": "Kante",
+     "Vards": "N'Golo"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Kovacic",
+     "Vards": "Mateo"
+    },
+    {
+     "Loma": "A",
+     "Nr": 22,
+     "Uzvards": "Ziyech",
+     "Vards": "Hakim"
+    },
+    {
+     "Loma": "A",
+     "Nr": 19,
+     "Uzvards": "Mount",
+     "Vards": "Mason"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Werner",
+     "Vards": "Timo"
+    },
+    {
+     "Loma": "A",
+     "Nr": 29,
+     "Uzvards": "Havertz",
+     "Vards": "Kai"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 16},
+    {"Nr": 6},
+    {"Nr": 2},
+    {"Nr": 28},
+    {"Nr": 5},
+    {"Nr": 7},
+    {"Nr": 8},
+    {"Nr": 22},
+    {"Nr": 19}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "25:30",
+     "P": [
+      {"Nr": 22},
+      {"Nr": 8}
+     ],
+     "Nr": 19,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "67:45",
+     "P": {"Nr": 19},
+     "Nr": 29,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "55:00",
+     "Nr1": 22,
+     "Nr2": 11
+    },
+    {
+     "Laiks": "82:30",
+     "Nr1": 8,
+     "Nr2": 29
+    }
+   ]},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "38:20",
+     "Nr": 2
+    },
+    {
+     "Laiks": "71:10",
+     "Nr": 5
+    },
+    {
+     "Laiks": "85:30",
+     "Nr": 7
+    }
+   ]}
+  },
+  {
+   "Nosaukums": "Arsenal",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Ramsdale",
+     "Vards": "Aaron"
+    },
+    {
+     "Loma": "A",
+     "Nr": 4,
+     "Uzvards": "White",
+     "Vards": "Ben"
+    },
+    {
+     "Loma": "A",
+     "Nr": 6,
+     "Uzvards": "Gabriel",
+     "Vards": "Magalhaes"
+    },
+    {
+     "Loma": "A",
+     "Nr": 3,
+     "Uzvards": "Tierney",
+     "Vards": "Kieran"
+    },
+    {
+     "Loma": "U",
+     "Nr": 5,
+     "Uzvards": "Partey",
+     "Vards": "Thomas"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Odegaard",
+     "Vards": "Martin"
+    },
+    {
+     "Loma": "U",
+     "Nr": 34,
+     "Uzvards": "Xhaka",
+     "Vards": "Granit"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Saka",
+     "Vards": "Bukayo"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Lacazette",
+     "Vards": "Alexandre"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Martinelli",
+     "Vards": "Gabriel"
+    },
+    {
+     "Loma": "A",
+     "Nr": 35,
+     "Uzvards": "Nketiah",
+     "Vards": "Eddie"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 4},
+    {"Nr": 6},
+    {"Nr": 3},
+    {"Nr": 5},
+    {"Nr": 8},
+    {"Nr": 34},
+    {"Nr": 7},
+    {"Nr": 9}
+   ]},
+   "Varti": {"VG": {
+    "Laiks": "52:15",
+    "P": [
+     {"Nr": 8},
+     {"Nr": 34}
+    ],
+    "Nr": 7,
+    "Sitiens": "N"
+   }},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "68:00",
+     "Nr1": 9,
+     "Nr2": 11
+    },
+    {
+     "Laiks": "80:45",
+     "Nr1": 7,
+     "Nr2": 35
+    }
+   ]},
+   "Sodi": {"Sods": {
+    "Laiks": "60:30",
+    "Nr": 34
+   }}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Mount",
+  "Vards": "Mason"
+ }
+}}

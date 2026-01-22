@@ -1,0 +1,248 @@
+{"Spele": {
+ "Laiks": "2022/02/18",
+ "Skatitaji": 7540,
+ "Vieta": "Old Trafford",
+ "T": [
+  {
+   "Uzvards": "Smith",
+   "Vards": "John"
+  },
+  {
+   "Uzvards": "Brown",
+   "Vards": "David"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Manchester United",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "De Gea",
+     "Vards": "David"
+    },
+    {
+     "Loma": "A",
+     "Nr": 2,
+     "Uzvards": "Lindelof",
+     "Vards": "Victor"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Maguire",
+     "Vards": "Harry"
+    },
+    {
+     "Loma": "A",
+     "Nr": 23,
+     "Uzvards": "Shaw",
+     "Vards": "Luke"
+    },
+    {
+     "Loma": "U",
+     "Nr": 6,
+     "Uzvards": "Pogba",
+     "Vards": "Paul"
+    },
+    {
+     "Loma": "U",
+     "Nr": 18,
+     "Uzvards": "Bruno",
+     "Vards": "Fernandes"
+    },
+    {
+     "Loma": "U",
+     "Nr": 39,
+     "Uzvards": "McTominay",
+     "Vards": "Scott"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Ronaldo",
+     "Vards": "Cristiano"
+    },
+    {
+     "Loma": "A",
+     "Nr": 10,
+     "Uzvards": "Rashford",
+     "Vards": "Marcus"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Greenwood",
+     "Vards": "Mason"
+    },
+    {
+     "Loma": "A",
+     "Nr": 25,
+     "Uzvards": "Sancho",
+     "Vards": "Jadon"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 2},
+    {"Nr": 5},
+    {"Nr": 23},
+    {"Nr": 6},
+    {"Nr": 18},
+    {"Nr": 39},
+    {"Nr": 7},
+    {"Nr": 10}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "08:15",
+     "P": {"Nr": 18},
+     "Nr": 7,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "32:40",
+     "P": [
+      {"Nr": 7},
+      {"Nr": 6}
+     ],
+     "Nr": 10,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "58:20",
+     "P": {"Nr": 10},
+     "Nr": 7,
+     "Sitiens": "N"
+    }
+   ]},
+   "Mainas": {"Maina": [
+    {
+     "Laiks": "65:00",
+     "Nr1": 10,
+     "Nr2": 11
+    },
+    {
+     "Laiks": "78:30",
+     "Nr1": 6,
+     "Nr2": 25
+    }
+   ]},
+   "Sodi": {"Sods": {
+    "Laiks": "42:10",
+    "Nr": 5
+   }}
+  },
+  {
+   "Nosaukums": "Liverpool",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Alisson",
+     "Vards": "Becker"
+    },
+    {
+     "Loma": "A",
+     "Nr": 4,
+     "Uzvards": "Van Dijk",
+     "Vards": "Virgil"
+    },
+    {
+     "Loma": "A",
+     "Nr": 5,
+     "Uzvards": "Konate",
+     "Vards": "Ibrahima"
+    },
+    {
+     "Loma": "A",
+     "Nr": 66,
+     "Uzvards": "Alexander-Arnold",
+     "Vards": "Trent"
+    },
+    {
+     "Loma": "A",
+     "Nr": 26,
+     "Uzvards": "Robertson",
+     "Vards": "Andrew"
+    },
+    {
+     "Loma": "U",
+     "Nr": 3,
+     "Uzvards": "Fabinho",
+     "Vards": "Tavares"
+    },
+    {
+     "Loma": "U",
+     "Nr": 14,
+     "Uzvards": "Henderson",
+     "Vards": "Jordan"
+    },
+    {
+     "Loma": "U",
+     "Nr": 8,
+     "Uzvards": "Keita",
+     "Vards": "Naby"
+    },
+    {
+     "Loma": "A",
+     "Nr": 11,
+     "Uzvards": "Salah",
+     "Vards": "Mohamed"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Firmino",
+     "Vards": "Roberto"
+    },
+    {
+     "Loma": "A",
+     "Nr": 23,
+     "Uzvards": "Diaz",
+     "Vards": "Luis"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 4},
+    {"Nr": 5},
+    {"Nr": 66},
+    {"Nr": 26},
+    {"Nr": 3},
+    {"Nr": 14},
+    {"Nr": 11},
+    {"Nr": 9}
+   ]},
+   "Varti": {"VG": {
+    "Laiks": "45:02",
+    "P": [
+     {"Nr": 66},
+     {"Nr": 14}
+    ],
+    "Nr": 11,
+    "Sitiens": "N"
+   }},
+   "Mainas": {"Maina": {
+    "Laiks": "72:15",
+    "Nr1": 9,
+    "Nr2": 23
+   }},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "28:30",
+     "Nr": 3
+    },
+    {
+     "Laiks": "65:50",
+     "Nr": 4
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Ronaldo",
+  "Vards": "Cristiano"
+ }
+}}

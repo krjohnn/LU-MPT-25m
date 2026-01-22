@@ -1,0 +1,167 @@
+{"Spele": {
+ "Laiks": "2022/05/01",
+ "Skatitaji": 15000,
+ "Vieta": "Wembley Stadium",
+ "T": [
+  {
+   "Uzvards": "Webb",
+   "Vards": "Howard"
+  },
+  {
+   "Uzvards": "Dean",
+   "Vards": "Mike"
+  }
+ ],
+ "Komanda": [
+  {
+   "Nosaukums": "Atletico Madrid",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 13,
+     "Uzvards": "Oblak",
+     "Vards": "Jan"
+    },
+    {
+     "Loma": "A",
+     "Nr": 15,
+     "Uzvards": "Savic",
+     "Vards": "Stefan"
+    },
+    {
+     "Loma": "A",
+     "Nr": 2,
+     "Uzvards": "Gimenez",
+     "Vards": "Jose"
+    },
+    {
+     "Loma": "U",
+     "Nr": 6,
+     "Uzvards": "Koke",
+     "Vards": "Resurreccion"
+    },
+    {
+     "Loma": "U",
+     "Nr": 5,
+     "Uzvards": "De Paul",
+     "Vards": "Rodrigo"
+    },
+    {
+     "Loma": "A",
+     "Nr": 7,
+     "Uzvards": "Griezmann",
+     "Vards": "Antoine"
+    },
+    {
+     "Loma": "A",
+     "Nr": 19,
+     "Uzvards": "Cunha",
+     "Vards": "Matheus"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 13},
+    {"Nr": 15},
+    {"Nr": 2},
+    {"Nr": 6},
+    {"Nr": 5},
+    {"Nr": 7},
+    {"Nr": 19}
+   ]},
+   "Varti": {"VG": [
+    {
+     "Laiks": "25:30",
+     "P": {"Nr": 6},
+     "Nr": 7,
+     "Sitiens": "N"
+    },
+    {
+     "Laiks": "65:15",
+     "P": {"Nr": 7},
+     "Nr": 19,
+     "Sitiens": "N"
+    }
+   ]},
+   "Sodi": {"Sods": {
+    "Laiks": "40:20",
+    "Nr": 15
+   }}
+  },
+  {
+   "Nosaukums": "Inter Milan",
+   "Speletaji": {"Speletajs": [
+    {
+     "Loma": "V",
+     "Nr": 1,
+     "Uzvards": "Handanovic",
+     "Vards": "Samir"
+    },
+    {
+     "Loma": "A",
+     "Nr": 37,
+     "Uzvards": "Skriniar",
+     "Vards": "Milan"
+    },
+    {
+     "Loma": "A",
+     "Nr": 6,
+     "Uzvards": "De Vrij",
+     "Vards": "Stefan"
+    },
+    {
+     "Loma": "U",
+     "Nr": 23,
+     "Uzvards": "Barella",
+     "Vards": "Nicolo"
+    },
+    {
+     "Loma": "U",
+     "Nr": 20,
+     "Uzvards": "Calhanoglu",
+     "Vards": "Hakan"
+    },
+    {
+     "Loma": "A",
+     "Nr": 10,
+     "Uzvards": "Lautaro",
+     "Vards": "Martinez"
+    },
+    {
+     "Loma": "A",
+     "Nr": 9,
+     "Uzvards": "Dzeko",
+     "Vards": "Edin"
+    }
+   ]},
+   "Pamatsastavs": {"Speletajs": [
+    {"Nr": 1},
+    {"Nr": 37},
+    {"Nr": 6},
+    {"Nr": 23},
+    {"Nr": 20},
+    {"Nr": 10},
+    {"Nr": 9}
+   ]},
+   "Varti": {"VG": {
+    "Laiks": "42:10",
+    "P": {"Nr": 23},
+    "Nr": 10,
+    "Sitiens": "N"
+   }},
+   "Sodi": {"Sods": [
+    {
+     "Laiks": "55:30",
+     "Nr": 37
+    },
+    {
+     "Laiks": "78:45",
+     "Nr": 20
+    }
+   ]}
+  }
+ ],
+ "VT": {
+  "Uzvards": "Griezmann",
+  "Vards": "Antoine"
+ }
+}}
