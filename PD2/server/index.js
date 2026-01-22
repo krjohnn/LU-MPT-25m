@@ -9,14 +9,15 @@ const { parseGameFile } = require('./parser');
 const app = express();
 app.use(cors());
 
-// --- THE MAIN FILE PROCESSING API ---
+// THE MAIN FILE PROCESSING API
 app.get('/api/process', (req, res) => {
     const dataDir = path.join(__dirname, '../data/JSON_TestData');
-    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
     const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
     let count = 0;
 
+    // Prepare statements once (already optimized)
     const insertTeam = db.prepare(`INSERT INTO teams (name) VALUES (?) ON CONFLICT(name) DO NOTHING`);
     const updateTeamStats = db.prepare(`
         UPDATE teams SET 
@@ -38,6 +39,8 @@ app.get('/api/process', (req, res) => {
         yellow_cards = yellow_cards + excluded.yellow_cards, red_cards = red_cards + excluded.red_cards,
         games_played = games_played + excluded.games_played
     `);
+    const checkExists = db.prepare('SELECT 1 FROM processed_files WHERE filename = ? AND content_hash = ?');
+    const insertProcessed = db.prepare('INSERT INTO processed_files (filename, content_hash) VALUES (?, ?)');
 
     files.forEach(file => {
         const filePath = path.join(dataDir, file);

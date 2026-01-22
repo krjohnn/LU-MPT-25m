@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// --- HELPER: Time conversions ---
+// HELPER: Time conversions
 // Converts "60:30" -> 60.5 minutes because we need it for calculations (sorting, comparisons, etc.)
 const parseTime = (timeStr) => {
     if (!timeStr || typeof timeStr !== 'string') return 0;
@@ -8,7 +8,7 @@ const parseTime = (timeStr) => {
     return parseInt(parts[0]) + (parseInt(parts[1]) / 60);
 };
 
-// --- HELPER: Fixing Data Structure Issues ---
+// HELPER: Fixing Data Structure Issues
 const asArray = (val) => {
     if (!val) return [];
     if (typeof val === 'string' && val.trim() === '') return []; // Empty string case
@@ -50,38 +50,40 @@ function parseGameFile(filePath) {
         const starters = asArray(tRaw.Pamatsastavs?.Speletajs).map(s => parseInt(s.Nr));
         const roster = asArray(tRaw.Speletaji?.Speletajs);
 
+
+        // Player Stats Calculation
         const players = roster.map(p => {
             const nr = parseInt(p.Nr);
             
-            // A. Start Time
+            // Start Time
             let startTime = starters.includes(nr) ? 0.0 : -1;
             let endTime = -1;
 
-            // B. Sub IN
+            // Substitute IN
             const subIn = subs.find(s => parseInt(s.Nr2) === nr);
             if (subIn) startTime = parseTime(subIn.Laiks);
 
-            // C. Sub OUT
+            // Substitute OUT
             const subOut = subs.find(s => parseInt(s.Nr1) === nr);
             if (subOut) endTime = parseTime(subOut.Laiks);
 
-            // D. Red Card (Ejection)
+            // Red Card
             const myCards = cards.filter(c => parseInt(c.Nr) === nr);
-            if (myCards.length >= 2) {
+            if (myCards.length >= 2) { // Red card is always the second entry
                 const ejectionTime = parseTime(myCards[1].Laiks);
                 if (endTime === -1 || ejectionTime < endTime) endTime = ejectionTime;
             }
 
-            // E. Duration Math
+            // Duration Math
             let minutes = 0;
             if (startTime !== -1) {
                 const actualEnd = (endTime === -1) ? gameEndTime : endTime;
                 minutes = Math.max(0, actualEnd - startTime);
             }
 
-            // F. Assists Calculation
+            // Assists Calculation
             // Look through ALL goals this team scored.
-            // If this player is listed in the 'P' (Passers) array of that goal, +1 assist.
+            // If this player is listed in the Passers array of that goal, +1 assist.
             const assistsCount = goals.filter(g => {
                 const passers = asArray(g.P);
                 return passers.some(passer => parseInt(passer.Nr) === nr);
@@ -108,6 +110,7 @@ function parseGameFile(filePath) {
         };
     });
 
+    // "..." to unwrap teams
     return {
         teamA: { ...teams[0], opponentScore: teams[1].score },
         teamB: { ...teams[1], opponentScore: teams[0].score },
